@@ -17,15 +17,15 @@ Examples
 
 Top ten metrics by number of time series:
 
-.. code-block::
+.. code-block:: bash
     cinderella top 10
 
 Only keep one week of `node_systemd_unit_state`:
 
-.. code-block::
+.. code-block:: bash
     cinderella delete 'node_systemd_unit_state' 1w
 
 List all metrics:
 
-.. code-block::
+.. code-block:: bash
     cinderella list
