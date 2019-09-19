@@ -2,18 +2,30 @@
 cinderella
 ==========
 
-
-Add a short description here!
-
+Cleans up after your ugly sisters
 
 Description
 ===========
 
-A longer description of your project goes here...
+Cleans stale metrics from prometheus, you can use the environmental variables:
 
+- ``PROMETHEUS_URL``, to set the URL that prometheus listens on, defaults to: ``http://localhost:9090``.
+- ``PROMETHEUS_HEAD``, to set the headers
 
-Note
-====
+Examples
+========
 
-This project has been set up using PyScaffold 2.5.11. For details and usage
-information on PyScaffold see http://pyscaffold.readthedocs.org/.
+Top ten metrics by number of time series:
+
+.. code-block::
+    cinderella top 10
+
+Only keep one week of `node_systemd_unit_state`:
+
+.. code-block::
+    cinderella delete 'node_systemd_unit_state' 1w
+
+List all metrics:
+
+.. code-block::
+    cinderella list
